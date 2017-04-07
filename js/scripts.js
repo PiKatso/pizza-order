@@ -1,12 +1,40 @@
 //BACK END//
 function Pizza (toppings, size){
-  this.toppings = [];
+  this.toppingsArr = [];
   this.size = size;
 }
 
-Pizza.prototype.cost = function(){
+// Pizza.prototype.total = function(toppings, size){
+//   var totalCost = "";
+//   totalCost = (this.toppingCost() + this.sizeCost());
+//   return totalCost
+// }
 
+//evaluate pizza toppings-price//
+Pizza.prototype.toppingCost = function() {
+  var toppingPrice = 0;
+  this.topping.forEach(function(topping) {
+    console.log(topping);
+    if (topping !== "") {
+      toppingPrice += 2;
+    }
+  });
+  return toppingPrice
+};
+
+//evaluate Pizza size-price//
+Pizza.prototype.sizeCost = function() {
+  var sizePrice = 0;
+  if (this.size === "small") {
+    sizePrice += 9;
+  } else if (this.size === "medium") {
+    sizePrice += 12;
+  } else {
+    sizePrice += 15;
+  }
+  return sizePrice
 }
+
 //reset feilds//
 // function resetFields(){
 //   $("input#new-customer-name").val("");
@@ -31,8 +59,8 @@ $(document).ready(function(){
     event.preventDefault();
     $("input:checkbox[name=tops]:checked").each(function(){
       var allTopping = $(this).val();
-      newPizza.toppings.push(allTopping);
-      console.log(newPizza.toppings);
+      newPizza.toppingsArr.push(allTopping);
+      console.log(newPizza.toppingsArr);
       $('#client-return-toppings').append(allTopping + " ");
     });
   });
@@ -46,6 +74,8 @@ $(document).ready(function(){
       $('#client-return-size').text(newPizza.size);
       console.log(newPizza.size);
     });
+    console.log(Pizza.total);
   });
+
   // resetFields();
 });
