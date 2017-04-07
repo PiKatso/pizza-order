@@ -10,7 +10,9 @@
 
 | Behavior | Input | Output |
 |----------|:-----:|:------:|
-
+| web app takes user name and returns | name: Kat | return : Kat|
+|  |  | |
+|  |  | |
 | The program gathers user input to create pizza | button pressed | collects data & returns|
 | The program does not allow for the user to input numbers or special characters | name: K@t | return: please enter your name|
 | The program accepts user selections to build pizza | select: mushrooms, anchovies | return: pizza with mushrooms & anchovies|
