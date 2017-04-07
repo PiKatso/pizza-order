@@ -11,5 +11,6 @@ $("form#user-name-input").submit(function(event) {
 
     var inputtedName = $("input#new-customer-name").val();
     console.log(inputtedName);
+
   });
 });
