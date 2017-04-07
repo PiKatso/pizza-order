@@ -24,11 +24,19 @@ $(document).ready(function(){
       // $('#client-return-toppings').append(proteinTopping);
       console.log(proteinTopping);
     });
-
     $("input:checkbox[name=tops-o]:checked").each(function(){
       var otherTopping = $(this).val();
       console.log(otherTopping);
     });
   });
-  
+
+  //get pizza size//
+  $("form#size-pizza").submit(function(event){
+    event.preventDefault();
+    $("input:checkbox[name=size]:checked").each(function(){
+      var pizzaSize = $(this).val();
+      console.log(pizzaSize);
+    });
+  });
+
 });
