@@ -17,35 +17,39 @@
         <form class="form-group" id="user-name-input" action="index.html" method="post">
           <label for="customer-name">Please enter you name:</label>
           <input type="text" class="form-control" id="new-customer-name">
+          <button id="name-area-btn" type="submit" name="button">Submit</button>
         </form>
       </div>
 
       <div class="user-topping-area">
-        <form id="user-toppings">
+        <form class="form-group" id="user-toppings">
           <label for="protien-toppings">Pick your toppings:</label><br>
-          <input type="checkbox" name="anchovies" value="">Anchovies<br>
-          <input type="checkbox" name="bacon" value="">Bacon<br>
-          <input type="checkbox" name="ham" value="">Ham<br>
-          <input type="checkbox" name="chicken" value="">Grilled Chicken<br>
-          <input type="checkbox" name="steak" value="">Steak<br>
+          <input type="checkbox" name="tops-p" value="anchovies">Anchovies<br>
+          <input type="checkbox" name="tops-p" value="bacon">Bacon<br>
+          <input type="checkbox" name="tops-p" value="ham">Ham<br>
+          <input type="checkbox" name="tops-p" value="chicken">Grilled Chicken<br>
+          <input type="checkbox" name="tops-p" value="steak">Steak<br>
 
           <label for="other-toppings">Pick your toppings:</label><br>
-          <input type="checkbox" name="olives" value="">Black Olives<br>
-          <input type="checkbox" name="tomatoes" value="">Tomatoes<br>
-          <input type="checkbox" name="mushrooms" value="">Mushrooms<br>
-          <input type="checkbox" name="onions" value="">Red Onions<br>
-          <input type="checkbox" name="artichokes" value="">Artichokes<br>
-          <input type="checkbox" name="corn" value="">Corn<br>
-          <input type="checkbox" name="pineapple" value="">Pineapples<br>
+          <input type="checkbox" name="tops-o" value="olives">Black Olives<br>
+          <input type="checkbox" name="tops-o" value="tomatoes">Tomatoes<br>
+          <input type="checkbox" name="tops-o" value="mushroom">Mushrooms<br>
+          <input type="checkbox" name="tops-o" value="onion">Red Onions<br>
+          <input type="checkbox" name="tops-o" value="artichokes">Artichokes<br>
+          <input type="checkbox" name="tops-o" value="corn">Corn<br>
+          <input type="checkbox" name="tops-o" value="pineapple">Pineapples<br>
+          <br>
+          <button id="topping-area-btn" type="submit" name="button">Submit</button>
         </form>
       </div>
 
-      <div class="user-size-selection">
+      <div class="size-selection-area">
         <form id="size-pizza">
           <label for="pizza-size">What size would you like:</label><br>
           <input type="checkbox" name="sml" value="">Small<br>
           <input type="checkbox" name="med" value="">Medium<br>
           <input type="checkbox" name="lrg" value="">Large<br>
+          <button id="size-area-btn" type="submit" name="button">Submit</button>
         </form>
       </div>
 
