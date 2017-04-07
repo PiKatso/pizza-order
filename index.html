@@ -21,8 +21,8 @@
         </form>
       </div>
 
-      <div class="user-topping-area">
-        <form class="form-group" id="user-toppings">
+      <div class="user-selection-area">
+        <form class="form-group" id="user-selections">
           <label for="protien-toppings">Pick your toppings:</label><br>
           <input type="checkbox" name="tops" value="anchovies">Anchovies<br>
           <input type="checkbox" name="tops" value="bacon">Bacon<br>
@@ -39,17 +39,12 @@
           <input type="checkbox" name="tops" value="corn">Corn<br>
           <input type="checkbox" name="tops" value="pineapple">Pineapples<br>
           <br>
-          <button id="topping-area-btn" type="submit" name="button">Submit</button>
-        </form>
-      </div>
 
-      <div class="size-selection-area">
-        <form id="size-pizza">
           <label for="pizza-size">What size would you like:</label><br>
           <input type="radio" name="size" value="small">Small<br>
           <input type="radio" name="size" value="medium">Medium<br>
           <input type="radio" name="size" value="large">Large<br>
-          <button id="size-area-btn" type="submit" name="button">Submit</button>
+          <button id="user-selection-btn" type="submit" name="button">Submit</button>
         </form>
       </div>
 
@@ -57,7 +52,7 @@
         <p><span id="client-return-name"></span></p><br>
         <p>We've got you down for a <span id="client-return-size"></span> pizza.</p>
         <p>With : <span id="client-return-toppings"></span> for toppings.</p>
-        <p><span id="client-order-cost"></span></p>
+        <p>That will be <span id="client-order-cost"></span></p>
       </div>
 
     </div> <!-- end container-->
