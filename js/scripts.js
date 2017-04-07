@@ -4,6 +4,15 @@ function Pizza (toppings, size){
   this.size = size;
 }
 
+Pizza.prototype.cost = function(){
+
+}
+//reset feilds//
+// function resetFields(){
+//   $("input#new-customer-name").val("");
+//   $("input:checkbox[name=tops]:checked").val("")
+// }
+
 //FRONT END//
 $(document).ready(function(){
  var newPizza = new Pizza ();
@@ -11,7 +20,9 @@ $(document).ready(function(){
 //takes client name//
   $("form#user-name-input").click(function(event) {
     event.preventDefault();
+
     var inputtedName = $("input#new-customer-name").val();
+    $('#client-return-name').text(inputtedName + ", ");
     console.log(inputtedName);
   });
 
@@ -22,7 +33,7 @@ $(document).ready(function(){
       var allTopping = $(this).val();
       newPizza.toppings.push(allTopping);
       console.log(newPizza.toppings);
-      // $('#client-return-toppings').append(allTopping);
+      $('#client-return-toppings').append(allTopping + " ");
     });
   });
 
@@ -32,8 +43,9 @@ $(document).ready(function(){
     $("input:radio[name=size]:checked").each(function(){
       var pizzaSize = $(this).val();
       newPizza.size = (pizzaSize);
+      $('#client-return-size').text(newPizza.size);
       console.log(newPizza.size);
     });
   });
-
+  // resetFields();
 });
