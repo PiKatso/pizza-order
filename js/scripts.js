@@ -64,8 +64,7 @@ $(document).ready(function(){
 
     //show final results
     $('#client-return-size').text(newPizza.size);  //size show//
-    $('#client-return-toppings').append(allTopping + " "); //show tops using var//
-    // $('#client-return-toppings').append(newPizza.toppingsArr + " "); //show tops using Array(ran into looping issue/bug )//
+    $('#client-return-toppings').text(newPizza.toppingsArr.join(", ")); //show tops using Array//
     $("#client-order-cost").text(newPizza.total());
     $(".user-selection-area").hide();
     $(".pizza-return-area").show();
