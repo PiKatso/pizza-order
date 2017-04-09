@@ -12,7 +12,6 @@ function Pizza (size, topping){
       toppingPrice += 2;
     }
   });
-  console.log("toppingPrice");
   return toppingPrice
 };
 
@@ -26,7 +25,6 @@ Pizza.prototype.sizeCost = function() {
   } else {
     sizePrice += 13;
   }
-  console.log(sizePrice);
   return sizePrice
 }
 
@@ -41,13 +39,6 @@ Pizza.prototype.total = function(){
 $(document).ready(function(){
   //New Pizza & total Price//
   var newPizza = new Pizza();
-  console.log(newPizza.size);
-  console.log(newPizza.toppingsArr)
-  // newPizza.size = (pizzaSize);
-  // newPizza.toppingsArr.push(allTopping); //push to Pizza array//
-
-  var pizzaCost = newPizza.total();
-  console.log(pizzaCost);
 
   //takes client name//
   $("form#user-name-input").submit(function(event) {
@@ -63,15 +54,13 @@ $(document).ready(function(){
 
     //get pizza size//
     $("input:radio[name=size]:checked").map(function(){
-      var pizzaSize = $(this).val();    //.map instead of .each//
+      var pizzaSize = $(this).val();
       newPizza.size = pizzaSize;
 
     //take user topping selection//
-    $("input:checkbox[name=tops]:checked").each(function(){
+    $("input:checkbox[name=tops]:checked").map(function(){
       var allTopping = $(this).val();
-
       newPizza.toppingsArr.push(allTopping); //push to Pizza array//
-      console.log(newPizza.toppingsArr);
 
     //show final results
     $('#client-return-size').text(newPizza.size);  //size show//
