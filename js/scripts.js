@@ -32,8 +32,8 @@ Pizza.prototype.sizeCost = function() {
 
 Pizza.prototype.total = function(){
   var totalCost = "";
-  totalCost = (this.sizeCost() + this.toppingCost());
-  console.log("total");
+  totalCost = this.sizeCost() + this.toppingCost();
+  console.log(totalCost);
   return totalCost
 }
 
@@ -41,8 +41,8 @@ Pizza.prototype.total = function(){
 $(document).ready(function(){
   //New Pizza & total Price//
   var newPizza = new Pizza();
-  // var newPizza = new Pizza(pizzaSize, allTopping);
   console.log(newPizza.size);
+  console.log(newPizza.toppingsArr)
   // newPizza.size = (pizzaSize);
   // newPizza.toppingsArr.push(allTopping); //push to Pizza array//
 
@@ -74,17 +74,14 @@ $(document).ready(function(){
       console.log(newPizza.toppingsArr);
 
     //show final results
-    // $('#client-return-size').text(pizzaSize);  //size show//
-    // $('#client-return-toppings').append(allTopping + " "); //show tops//
+    $('#client-return-size').text(newPizza.size);  //size show//
+    $('#client-return-toppings').append(allTopping + " "); //show tops using var//
+    // $('#client-return-toppings').append(newPizza.toppingsArr + " "); //show tops using Array(ran into looping issue/bug )//
+    $("#client-order-cost").text(newPizza.total());
     $(".user-selection-area").hide();
     $(".pizza-return-area").show();
     });
     });
-
-    //show final results
-    $('#client-return-size').text(newPizza.size);  //size show//
-    $('#client-return-toppings').append(newPizza.toppings + " "); //show tops//
-    $("client-order-cost").text(newPizza.total());
   });
 
 });
