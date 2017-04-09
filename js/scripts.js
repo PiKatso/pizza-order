@@ -7,12 +7,12 @@ function Pizza (size, topping){
 //evaluate pizza toppings-price//
  Pizza.prototype.toppingCost = function() {
   let toppingPrice = 0;
-  this.toppingsArr.length.forEach(function(elem) {
+  this.toppingsArr.forEach(function(elem) {
     if (elem !== "") {
       toppingPrice += 2;
     }
   });
-  console.log("toppings");
+  console.log("toppingPrice");
   return toppingPrice
 };
 
@@ -26,13 +26,13 @@ Pizza.prototype.sizeCost = function() {
   } else {
     sizePrice += 13;
   }
-  console.log("size");
+  console.log(sizePrice);
   return sizePrice
 }
 
 Pizza.prototype.total = function(){
   var totalCost = "";
-  totalCost = (this.sizeCost + this.toppingCost);
+  totalCost = (this.sizeCost() + this.toppingCost());
   console.log("total");
   return totalCost
 }
@@ -69,11 +69,13 @@ $(document).ready(function(){
     //take user topping selection//
     $("input:checkbox[name=tops]:checked").each(function(){
       var allTopping = $(this).val();
+
       newPizza.toppingsArr.push(allTopping); //push to Pizza array//
+      console.log(newPizza.toppingsArr);
 
     //show final results
-    $('#client-return-size').text(pizzaSize);  //size show//
-    $('#client-return-toppings').append(allTopping + " "); //show tops//
+    // $('#client-return-size').text(pizzaSize);  //size show//
+    // $('#client-return-toppings').append(allTopping + " "); //show tops//
     $(".user-selection-area").hide();
     $(".pizza-return-area").show();
     });
@@ -82,7 +84,7 @@ $(document).ready(function(){
     //show final results
     $('#client-return-size').text(newPizza.size);  //size show//
     $('#client-return-toppings').append(newPizza.toppings + " "); //show tops//
-    $("client-order-cost").text(newPizza.total);
+    $("client-order-cost").text(newPizza.total());
   });
 
 });
