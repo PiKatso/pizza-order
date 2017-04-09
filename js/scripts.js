@@ -39,6 +39,16 @@ Pizza.prototype.total = function(){
 
 //FRONT END//
 $(document).ready(function(){
+  //New Pizza & total Price//
+  var newPizza = new Pizza();
+  // var newPizza = new Pizza(pizzaSize, allTopping);
+  console.log(newPizza.size);
+  // newPizza.size = (pizzaSize);
+  // newPizza.toppingsArr.push(allTopping); //push to Pizza array//
+
+  var pizzaCost = newPizza.total();
+  console.log(pizzaCost);
+
   //takes client name//
   $("form#user-name-input").submit(function(event) {
     event.preventDefault();
@@ -52,35 +62,27 @@ $(document).ready(function(){
     event.preventDefault();
 
     //get pizza size//
-    $("input:radio[name=size]:checked").each(function(){
+    $("input:radio[name=size]:checked").map(function(){
       var pizzaSize = $(this).val();    //.map instead of .each//
+      newPizza.size = pizzaSize;
 
     //take user topping selection//
     $("input:checkbox[name=tops]:checked").each(function(){
       var allTopping = $(this).val();
-
-    //Return total Price//
-    var newPizza = new Pizza(pizzaSize, allTopping);
-    newPizza.size = (pizzaSize);
-    newPizza.toppingsArr.push(allTopping); //push to Pizza array//
-
-    var pizzaCost = newPizza.total();
-    console.log(pizzaCost);
-
-
-    // $("client-order-cost").text(pizzaCost);   //total show//
-    // console.log(pizzaCost)
+      newPizza.toppingsArr.push(allTopping); //push to Pizza array//
 
     //show final results
     $('#client-return-size').text(pizzaSize);  //size show//
     $('#client-return-toppings').append(allTopping + " "); //show tops//
-    $("client-order-cost").text(pizzaCost);
-    // $('#client-return-size').text(newPizza.size);  //size show//
-    // console.log(newPizza.size);
     $(".user-selection-area").hide();
     $(".pizza-return-area").show();
     });
     });
+
+    //show final results
+    $('#client-return-size').text(newPizza.size);  //size show//
+    $('#client-return-toppings').append(newPizza.toppings + " "); //show tops//
+    $("client-order-cost").text(newPizza.total);
   });
 
 });
