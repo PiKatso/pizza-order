@@ -52,12 +52,14 @@ $(document).ready(function(){
     event.preventDefault();
 
     //get pizza size//
-    $("input:radio[name=size]:checked").each(function(){
+    $("input:radio[name=size]:checked").map(function(){
       var pizzaSize = $(this).val();    //.map instead of .each//
+      console.log(pizzaSize);
 
     //take user topping selection//
-    $("input:checkbox[name=tops]:checked").each(function(){
+    $("input:checkbox[name=tops]:checked").map(function(){
       var allTopping = $(this).val();
+      console.log(allTopping);
 
     //Return total Price//
     var newPizza = new Pizza(pizzaSize, allTopping);
