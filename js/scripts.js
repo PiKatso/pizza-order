@@ -46,7 +46,7 @@ $(document).ready(function(){
     var inputtedName = $("input#new-customer-name").val();
     $(".customer-name-area").hide();
     $(".user-selection-area").show();
-    $('#client-return-name').text(inputtedName + ", ");
+    $('#client-return-name').text("Hello " + inputtedName + ", ");
   });
 
   $("form#user-selections").submit(function(event) {

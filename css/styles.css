@@ -1,7 +1,63 @@
+.jumbotron {
+  background-color: tomato;
+}
+
+/*body {
+  background-color: tomato;
+}*/
+/*
+.container {
+  background-color: #FFFFFF;
+}*/
+
+h1 {
+  text-align: center;
+  font-family: 'Baloo Chettan', cursive;
+  font-size: 60px;
+}
+
+#user-name-input {
+  font-family: 'Baloo Chettan', cursive;
+  font-size: 20px;
+}
+
 .user-selection-area {
   display: none;
+  font-family: 'Baloo Chettan', cursive;
+  font-size: 20px;
 }
+
+/*removes input tag, for text type generic border*/
+input[type=text] {
+  border: none;
+  outline: none;
+  width: 30vw;
+  border: solid 3px tomato;
+}
+
+/*removes and creates focus-box shadow*/
+input[type=text]:focus {
+  box-shadow: none;
+  border-radius: none;
+  border: solid 5px tomato;       /*creates second/double border*/
+  /*box-shadow: 0 0 5px 1px tomato;    creates focus glow*/
+}
+
+
+/*input[type="text"]:focus {
+  outline: none;
+}
+input[type=text]{
+  outline: none;
+  width: 40vw;
+  border-bottom: 5px solid tomato;
+  transition: 0.3s ease all;
+}*/
+
 
 .pizza-return-area {
   display: none;
+  text-align: center;
+  font-family: 'Baloo Chettan', cursive;
+  font-size: 40px;
 }
