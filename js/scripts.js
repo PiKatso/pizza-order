@@ -7,12 +7,11 @@ function Pizza (size, topping){
 //evaluate pizza toppings-price//
  Pizza.prototype.toppingCost = function() {
   let toppingPrice = 0;
-  this.toppingsArr.length.forEach(function(elem) {
+  this.toppingsArr.forEach(function(elem) {
     if (elem !== "") {
       toppingPrice += 2;
     }
   });
-  console.log("toppings");
   return toppingPrice
 };
 
@@ -26,19 +25,21 @@ Pizza.prototype.sizeCost = function() {
   } else {
     sizePrice += 13;
   }
-  console.log("size");
   return sizePrice
 }
 
 Pizza.prototype.total = function(){
   var totalCost = "";
-  totalCost = (this.sizeCost + this.toppingCost);
-  console.log("total");
+  totalCost = this.sizeCost() + this.toppingCost();
+  console.log(totalCost);
   return totalCost
 }
 
 //FRONT END//
 $(document).ready(function(){
+  //New Pizza & total Price//
+  var newPizza = new Pizza();
+
   //takes client name//
   $("form#user-name-input").submit(function(event) {
     event.preventDefault();
@@ -53,32 +54,18 @@ $(document).ready(function(){
 
     //get pizza size//
     $("input:radio[name=size]:checked").map(function(){
-      var pizzaSize = $(this).val();    //.map instead of .each//
-      console.log(pizzaSize);
+      var pizzaSize = $(this).val();
+      newPizza.size = pizzaSize;
 
     //take user topping selection//
     $("input:checkbox[name=tops]:checked").map(function(){
       var allTopping = $(this).val();
-      console.log(allTopping);
-
-    //Return total Price//
-    var newPizza = new Pizza(pizzaSize, allTopping);
-    newPizza.size = (pizzaSize);
-    newPizza.toppingsArr.push(allTopping); //push to Pizza array//
-
-    var pizzaCost = newPizza.total();
-    console.log(pizzaCost);
-
-
-    // $("client-order-cost").text(pizzaCost);   //total show//
-    // console.log(pizzaCost)
+      newPizza.toppingsArr.push(allTopping); //push to Pizza array//
 
     //show final results
-    $('#client-return-size').text(pizzaSize);  //size show//
-    $('#client-return-toppings').append(allTopping + " "); //show tops//
-    $("client-order-cost").text(pizzaCost);
-    // $('#client-return-size').text(newPizza.size);  //size show//
-    // console.log(newPizza.size);
+    $('#client-return-size').text(newPizza.size);  //size show//
+    $('#client-return-toppings').text(newPizza.toppingsArr.join(", ")); //show tops//
+    $("#client-order-cost").text(newPizza.total());
     $(".user-selection-area").hide();
     $(".pizza-return-area").show();
     });
