@@ -2,18 +2,14 @@
   background-color: tomato;
 }
 
-/*body {
-  background-color: tomato;
-}*/
-/*
-.container {
-  background-color: #FFFFFF;
-}*/
-
 h1 {
   text-align: center;
   font-family: 'Baloo Chettan', cursive;
   font-size: 60px;
+}
+
+form {
+  text-align: center;
 }
 
 #user-name-input {
@@ -33,6 +29,8 @@ input[type=text] {
   outline: none;
   width: 30vw;
   border: solid 3px tomato;
+  margin:0px auto;     /* centers input box*/
+  text-align: center;
 }
 
 /*removes and creates focus-box shadow*/
@@ -43,21 +41,28 @@ input[type=text]:focus {
   /*box-shadow: 0 0 5px 1px tomato;    creates focus glow*/
 }
 
-
-/*input[type="text"]:focus {
-  outline: none;
-}
-input[type=text]{
-  outline: none;
-  width: 40vw;
-  border-bottom: 5px solid tomato;
-  transition: 0.3s ease all;
+/*hides radio boxes intitially (planning to try and find a prettier solution for these)*/
+/*input[type=radio]{
+  position: absolute;
+  visibility: hidden;
 }*/
 
+
+button {
+  color: #fff;
+  background-color: tomato;
+  text-shadow: -1px 1px gray;
+  border: none;
+  font-size: 25px;
+}
+
+button:focus {
+  outline: none;
+}
 
 .pizza-return-area {
   display: none;
   text-align: center;
   font-family: 'Baloo Chettan', cursive;
-  font-size: 40px;
+  font-size: 30px;
 }
